@@ -26,11 +26,12 @@ class ContactDetailsRepository(val db: AppDatabase) {
             db.getContactDetails().getData()
         }
     }
-    suspend fun deleteContact(id: Int, name: String, phone:String ){
+    suspend fun deleteContact(id: Int){
        return withContext(IO){
-           db.getContactDetails().delData()
+           db.getContactDetails().delData(id)
        }
     }
+
    /** suspend fun deleteContact((contactDetails: ContactDetails): Long){
         return withContext(IO){
             db.getContactDetails().delData(deleteContact)

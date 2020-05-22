@@ -34,6 +34,10 @@ class RoomActivity : AppCompatActivity() {
             updateContact()
         }
 
+        delete.setOnClickListener {
+            deleteContact(id.text.toString().toInt())
+        }
+
         CoroutineScope(Main).launch {
             viewModel.getDate().await().observe(this@RoomActivity, Observer {
                 Log.d("contactList===", it.toString())
@@ -54,9 +58,9 @@ class RoomActivity : AppCompatActivity() {
             Log.d("clicked clicked", ret.toString())
         }
     }
-    private fun deleteContact(){
+    private fun deleteContact(id: Int){
         CoroutineScope(Main).launch {
-            
+            viewModel.delData(id = id)
         }
     }
 }

@@ -17,11 +17,10 @@ interface ContactDetails {
      fun getData():LiveData<List<ContactDetails>>
 
     @Query("DELETE  FROM ContactDetails WHERE id =:id ")
-     fun  delData(id: Long) : Long
+     fun  delData(id: Int)
 
-    @Query("DELETE FROM ContactDetails")
-    fun deleteAll()
-    fun delData()
+//    @Query("DELETE FROM ContactDetails")
+//    fun deleteAll()
 
 
 }

@@ -33,7 +33,7 @@
 <!--            android:name=".ui.MapsActivity"-->
 <!--            android:label="@string/title_activity_maps"></activity>-->
         <!-- <activity android:name=".ui.RoomActivity"></activity> -->
-        <activity android:name=".ui.MapsActivity">
+        <activity android:name=".ui.RoomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

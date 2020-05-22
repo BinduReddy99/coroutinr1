@@ -54,4 +54,9 @@ class RoomActivity : AppCompatActivity() {
             Log.d("clicked clicked", ret.toString())
         }
     }
+    private fun deleteContact(){
+        CoroutineScope(Main).launch {
+            
+        }
+    }
 }

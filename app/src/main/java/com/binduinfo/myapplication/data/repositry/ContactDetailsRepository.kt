@@ -3,9 +3,7 @@ package com.binduinfo.myapplication.data.repositry
 import androidx.lifecycle.LiveData
 import com.binduinfo.myapplication.data.db.AppDatabase
 import com.binduinfo.myapplication.data.entity.ContactDetails
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
@@ -28,4 +26,14 @@ class ContactDetailsRepository(val db: AppDatabase) {
             db.getContactDetails().getData()
         }
     }
+    suspend fun deleteContact(id: Int, name: String, phone:String ){
+       return withContext(IO){
+           db.getContactDetails().delData()
+       }
+    }
+   /** suspend fun deleteContact((contactDetails: ContactDetails): Long){
+        return withContext(IO){
+            db.getContactDetails().delData(deleteContact)
+        }
+    }**/
 }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.binduinfo.myapplication.data.entity.ContactDetails
 
+
 @Dao
 interface ContactDetails {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -14,5 +15,13 @@ interface ContactDetails {
 
     @Query("SELECT * FROM ContactDetails")
      fun getData():LiveData<List<ContactDetails>>
+
+    @Query("DELETE  FROM ContactDetails WHERE id =:id ")
+     fun  delData(id: Long) : Long
+
+    @Query("DELETE FROM ContactDetails")
+    fun deleteAll()
+    fun delData()
+
 
 }

@@ -30,5 +30,10 @@ class RoomActivityViewModel(val db:AppDatabase, val repository: ContactDetailsRe
             repository.getContact()
         }
     }
+    suspend fun delData(): Deferred<LiveData<List<ContactDetails>>>{
+       return  CoroutineScope(IO) .async {
+            repository.deleteContact()
+        }
+    }
 
 }
